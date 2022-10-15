@@ -104,13 +104,86 @@ header{
     word-break: break-all;
     align-self: center;
 }
-.search_criteria{
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+header li, header a, header button {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 7%;
+    background: rgb(16, 25, 44);
+    /*background-image: linear-gradient(to bottom, rgb(69, 91, 135) 0%, #4975e5 100%);*/
+    z-index: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: all .3s ease 0s;
+    box-shadow: none;
+}
+
+.logo
+{
+    cursor: pointer;
+    height: 60px;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+}
+
+.logo:hover{
+    /* border-radius: 20px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); */
+    transition: all .3s ease 0s;
+    transform: scale(1.1,1.1);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all .1s ease 0s;
+}
+
+.nav__links li a:hover {
+    transition: all .1s ease 0s;
+    padding-bottom: 5px;
+    color: rgba(143, 78, 4, 0.749);
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #004055;
+}
+.des_panel{
+    margin-top: 50px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding: 4%;
-    font-family: "Kumbh Sans", sans-serif;
-    text-align: center;
-    font-size: 1.5rem;
-    color: white;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+.search_descrip{
+    font-size: 25px;
+}
+.search_panel{
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info{
+    font-size: 40px;
 }

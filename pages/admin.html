@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocery Hub</title>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/admin.css" />
     <link rel="shortcut icon" type="image/png" href="img/logo.png" />
-    // add scripts for getting fetch requests
+    <!--add scripts for getting fetch requests-->
     <script src=’../scripts/admin.js’></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
@@ -33,20 +33,24 @@
 		</nav>
 	  </header>
 
-    <div class="section1" style="font-weight: bold">
-      <div class="sideIndent"></div>
+    <div class = "contentContainer">
 
-      <div class="flexContainer">
-        <div class="introTextContainer">
-          <p class="connecting">Welcome,</p>
-          <p class="food">Target</p> <br>
-          <p class = "learning">View your inventory below: <br> <br>
-          <button class="main__btn"><a href="#">View Inventory</a></button>
-        </div>
+      <h1>My Activities</h1>
 
-        <p class="results">results go here</p>
-      </div>
+      <a href="/create">
+          <div class="activity">
+              <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+      </a>
+
       
-    </div>
+      <!-- <div class="activity">
+          <a href="/edit?id={%ID%}">
+              <span style="margin-right: 700px; display: inline-block;
+              vertical-align: middle;">{%SPORT%} - {%TYPE%} ({%DATE%})</span>
+          </a>
+          <ion-icon class="icon" name="checkmark-circle-outline" style="color: {%COLOR%};"></ion-icon>
+      </div> -->
+  </div>
   </body>
 </html>
