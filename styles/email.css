@@ -50,7 +50,6 @@ header{
     transition: all .3s ease 0s;
     transform: scale(1.1,1.1);
 }
-
 .nav__links{
     list-style: none;
 }
@@ -166,6 +165,7 @@ header{
     border-width: 0px 0px 2px 0px;
     border-color: #004055;
 }
+
 .des_panel{
     margin-top: 50px;
     display: flex;
@@ -173,15 +173,14 @@ header{
     align-items: flex-start;
     margin-bottom: 25px;
 }
+
+h1 {
+    text-align: center !important;
+}
+
 .search_descrip{
     font-size: 25px;
-}
-.search_panel{
-    margin-top: 75px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-bottom: 25px;
+    text-align: center;
 }
 
 .info{

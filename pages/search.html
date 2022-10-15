@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocery Hub</title>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/search.css" />
     <link rel="shortcut icon" type="image/png" href="img/logo.png" />
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
@@ -30,23 +30,29 @@
 		  </ul>
 		</nav>
 	</header>
-    <div class = "search_criteria">
+  <div class = "des_panel">
+    <div class = "search_descrip">
         <h1>
           Enter what you are looking for and where you want to buy it
         </h1>
     </div>
-    <div class="sectionsearch" style="font-weight: bold">
-        <div class="sideIndent"></div>
-
-        <div class="flexContainersearch">
-            <div class="introTextContainersearch">
-            </div>
-
-            <div class="Search">
-                
-            </div>
-        </div>
+  </div>
+  <div class = "search_panel">
+    <form>
+      <div class = "info">
+        <label for="zipcode">Enter your zipcode:</label><br>
+        <input type="text" id="zipcode" name="zipcode"><br>
+        <label for="Store_name">Enter the store name:</label><br>
+        <input type="text" id="Store_name" name="Store_name"><br>
+        <label for="Types">Enter the type of product you want</label><br>
+        <input type="text" id="TYpes" name="Types"><br>
+      </div>
+      <div onclick = "sending()">
+            
+        <input type="submit" value="Submit">
         
     </div>
+    </form>
+  </div>
 </body>
     </html>
