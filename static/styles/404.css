@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+li, a, button {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 7%;
+    background: RGB(0, 85, 149);
+    z-index: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: all .3s ease 0s;
+    box-shadow: none;
+}
+
+.shadow{
+    transition: all .3s ease 0s;
+    box-shadow: 0px 10px 17px 0px rgba(0,0,0,0.75);
+}
+
+.logo
+{
+    cursor: pointer;
+    height: 60px;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+}
+
+.logo:hover{
+    /* border-radius: 20px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); */
+    transition: all .3s ease 0s;
+    transform: scale(1.1,1.1);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all .1s ease 0s;
+}
+
+.nav__links li a:hover {
+    transition: all .1s ease 0s;
+    padding-bottom: 5px;
+    color: #004055;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #004055;
+}
+
+#container__back{
+    background: url(../sources/404.jpg);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;
+}
