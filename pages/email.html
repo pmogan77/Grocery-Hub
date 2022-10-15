@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Hub</title>
+    <link rel="stylesheet" href="../styles/search.css" />
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          document.getElementById("header").classList.add("shadow");
+        } else {
+          document.getElementById("header").classList.remove("shadow");
+        }
+      });
+    </script>
+  </head>
+<body>
+    <header id="header">
+		<a href="home"><img class="logo" src="../sources/logo.png" alt="logo" /></a>
+		<nav>
+		  <ul class="nav__links">
+			<li><a href="/community">Community</a></li>
+			<li><a href="/search">Search</a></li>
+			<li><a href="/mail">Mailing List</a></li>
+			<li><a href="/admin">Storefront</a></li>
+		  </ul>
+		</nav>
+	</header>
+  <div class = "des_panel">
+    <div class = "search_descrip">
+        <h1>
+          Get notified when produce is available
+        </h1>
+    </div>
+  </div>
+  <div class = "des_panel">
+    <form>
+      <div class = "info">
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="zip">Enter the zip code:</label><br>
+        <input id="zip" name="zip" type="text" pattern="[0-9]*"><br>
+        <label for="types">Enter the type of product you want</label><br>
+        <input type="text" id="types" name="types"><br>
+      </div>
+      <div onclick = "sending()">
+            
+        <input type="submit" value="Submit">
+        
+    </div>
+    </form>
+  </div>
+</body>
+    </html>
