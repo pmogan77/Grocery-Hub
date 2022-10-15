@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Questrial', sans-serif;
+}
+
+li, a, button {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #757575;
+    text-decoration: none;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 7%;
+    z-index: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: all .3s ease 0s;
+    box-shadow: none;
+}
+
+.shadow{
+    transition: all .3s ease 0s;
+    box-shadow: 0px 10px 17px 0px rgba(0,0,0,0.75);
+}
+
+.logo
+{
+    cursor: pointer;
+    height: 2rem;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+}
+
+.logo:hover{
+    /* border-radius: 20px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); */
+    transition: all .3s ease 0s;
+    transform: scale(1.1,1.1);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all .1s ease 0s;
+}
+
+.nav__links li a:hover {
+    transition: all .1s ease 0s;
+    padding-bottom: 5px;
+    color: #004055;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #004055;
+}
+
+.section1{
+    background-color: black;
+    padding-top: 50px;
+    display: inline-block;
+    padding-bottom: 160px;
+    width: 100%;
+}
+
+.flexContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    color: white !important;
+}
+
+.sideIndent{
+    position: absolute;
+    background-color: RGB(0, 85, 149);
+    width: 12px;
+    height: 200px;
+    margin-top: 7px;
+}
+
+.introTextContainer{
+    position: relative;
+    margin-left: 50px;
+    max-width: auto;
+    word-break: break-all;
+}
+
+.connecting{
+    font-size: 100px;
+}
+
+.food{
+    font-size: 75px;
+}
+
+.mission{
+    margin-left: 5px;
+    margin-top: 50px;
+    font-size: 25px;
+    color: #757575;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+header li, header a, header button {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: orange !important;
+    text-decoration: none;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 7%;
+    background: black !important;;
+    z-index: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: all .3s ease 0s;
+    box-shadow: none;
+}
+
+.logo
+{
+    cursor: pointer;
+    height: 60px;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+}
+
+.logo:hover{
+    /* border-radius: 20px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); */
+    transition: all .3s ease 0s;
+    transform: scale(1.1,1.1);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all .1s ease 0s;
+}
+
+.nav__links li a:hover {
+    transition: all .1s ease 0s;
+    padding-bottom: 5px;
+    color: #004055;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #004055;
+}
+
+.video_1_Container img{
+	width: 400px;
+}
+
+.mission-statement {
+    margin-left: 50px;
+    font-size: 25px;
+    margin-top: 25px;
+}

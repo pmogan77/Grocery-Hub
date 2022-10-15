@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Hub</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          document.getElementById("header").classList.add("shadow");
+        } else {
+          document.getElementById("header").classList.remove("shadow");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header id="header">
+		<a href="home"><img class="logo" src="../sources/logo.png" alt="logo" /></a>
+		<nav>
+		  <ul class="nav__links">
+			<li><a href="/community">Community</a></li>
+			<li><a href="/search">Search</a></li>
+			<li><a href="/mail">Mailing List</a></li>
+			<li><a href="/admin">Storefront</a></li>
+		  </ul>
+		</nav>
+	  </header>
+
+    <div class="section1" style="font-weight: bold">
+      <div class="sideIndent"></div>
+
+      <div class="flexContainer">
+        <div class="introTextContainer">
+          <p class="connecting">Connecting</p>
+          <p class="food">Food to people</p> <br>
+          <p class = "learning">Tons of food get wasted daily due to expiration. <br> <br>
+            We connect grocery stores to their customers <br><br> to reduce food waste and get you cheaper prices.</p>
+          <button class="main__btn"><a href="#">See What's Available</a></button>
+        </div>
+
+        <div class="video_1_Container">
+			<img src="../sources/grocery.jpg" alt="Connectivity">
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
