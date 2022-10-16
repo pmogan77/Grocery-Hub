@@ -92,10 +92,11 @@ def grocery_search():
     print(data)
     zipcode = data["zip"]
     out = search_groceries(zipcode)
-    if ("store_name" in data):
-        out = filter(lambda product: data["store_name"].lower() in product[-2].lower(), out)
+    print(out)
+    if ("store" in data):
+        out = filter(lambda product: data["store"].lower() in product[-2].lower(), out)
     if ("food_type" in data):
-        out = filter(lambda product: data["product_type"].lower() in product[2].lower(), out)
+        out = filter(lambda product: data["food_type"].lower() in product[2].lower(), out)
     return jsonify({'result': [dict(row) for row in out]})
     print(out)
     return jsonify({'result': [dict(row) for row in out]})

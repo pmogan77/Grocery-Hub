@@ -161,7 +161,7 @@ header{
 .nav__links li a:hover {
     transition: all .1s ease 0s;
     padding-bottom: 5px;
-    color: rgba(143, 78, 4, 0.749);
+    color: rgba(244, 168, 80, 0.749);
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: #004055;

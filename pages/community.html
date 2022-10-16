@@ -40,7 +40,7 @@
         const params = new URLSearchParams(qs)
         const obj = Object.fromEntries(params)
         console.log(obj)
-        if(!obj.zip) {
+        if(!obj.zip || obj.zip == "0") {
           obj.zip = 0;
         }
 

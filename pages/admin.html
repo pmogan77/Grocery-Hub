@@ -73,10 +73,7 @@
       </div>
 
     <script>
-        function close() {
-            alert("test");
-        }
-        var obj = {store_name: 'heb', zip: 78705};
+        var obj = {store: 'heb', zip: 78705};
         fetch('/grocery_search', {headers: {
             'Content-Type': 'application/json'
             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -115,7 +112,7 @@
                         console.log(event.target.parentElement.children[0].children[2].innerText);
                         // zip code, store, product_name, product_manufacturer
                         const string = event.target.parentElement.children[0].children[2].innerText;
-                        const end = string.indexOf("(");
+                        const end = string.indexOf("(")-1;
                         const start = string.indexOf("(")+1;
                         const end2 = string.indexOf(")");
                         console.log(string.substring(0, end));
@@ -128,7 +125,7 @@
                         method: 'DELETE',
                         body: JSON.stringify(obj)}).then(res => {
                             console.log("deleted item success");
-                            // location.reload();
+                            location.reload();
                         })
                         
                         // location.reload();

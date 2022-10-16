@@ -36,11 +36,12 @@ def get_products(zip):
 def remove_product(product_name, store_name, product_manufacturer, zip_code):
     # ASSUMPTION: product_name, store_name, product_manuf. are all unique identifiers. could be source of bugs
     get_product_query = f"""
-    SELECT * FROM products_db WHERE product_name = '{product_name}'
+    SELECT * FROM products_db WHERE product_name='{product_name}'
     AND store_name = '{store_name}'
     AND product_manufacturer='{product_manufacturer}'
-    AND zip_code={zip_code}
+    AND zip_code = {zip_code}
     """
+    
     print(product_name)
     print(store_name)
     print(product_manufacturer)
@@ -134,7 +135,7 @@ def init_db():
     VALUES('chicken', 'kirkland', 'poultry', DATE '2016-03-26', 2.5, 10, 'costco', 78704)
     ;""",
     """INSERT INTO products_db
-    VALUES('candy', 'blue', 'dairy', DATE '2022-10-15', 3.5, 10, 'heb', 78705)
+    VALUES('candy', 'blue', 'dairy', DATE '2022-10-15', 3.5, 2, 'heb', 78705)
     ;""",
     """INSERT INTO products_db
     VALUES('salmon', 'kroger', 'seafood', DATE '2022-10-20', 9.5, 10, 'kroger', 78703)
@@ -201,10 +202,10 @@ def search_groceries(zipcode):
     search_groceries_query = """
     SELECT * FROM products_db
     """
-    if(zipcode != 0):
-        search_groceries_query += f" WHERE zip_code = '{zipcode}'"
-    #  store_name='{store}' AND  AND product_type='{food_type}
-    return conn.execute(text(search_groceries_query)).fetchall()
+    if (zipcode == 0):
+        return conn.execute(text("SELECT * FROM products_db")).fetchall()
+    else:
+        return conn.execute(text(f"SELECT * FROM products_db WHERE zip_code = {zipcode}")).fetchall()
 
 # removes all tables and then adds them back
 def reinit_db():
