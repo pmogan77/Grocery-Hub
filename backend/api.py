@@ -66,6 +66,17 @@ def get_admin():
 def get_login():
     return render_template('login.html')
 
+@app.route("/add_to_mail_list", methods=['POST'])
+def add_to_mail_list():
+    print("reached")
+    print(request.json)
+    #email = data['email']
+    #zipcode = data["zip"]
+    #store = data["store"]
+    #food = data["food_type"]
+    #print("made it")
+    return "True"
+
 if __name__ == "__main__":
 
     app.debug = True
