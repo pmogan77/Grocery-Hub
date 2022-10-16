@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,100,400');
 
 *{
     box-sizing: border-box;
@@ -50,7 +49,6 @@ header{
     transition: all .3s ease 0s;
     transform: scale(1.1,1.1);
 }
-
 .nav__links{
     list-style: none;
 }
@@ -73,29 +71,15 @@ header{
     border-color: #004055;
 }
 
-
-.flexContainer{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap:wrap;
+.section1{
+    /*background-color: RGB(22, 180, 236);*/
+    background-color:  #000099;
+    background-image: linear-gradient(to top, #6699FF 0%, #4975e5 100%);
+    padding-top: 75px;
+    display: inline-block;
+    padding-bottom: 160px;
+    width: 100%;
 }
-
-.sideIndent{
-    position: absolute;
-    background-color: RGB(0, 85, 149);
-    width: 12px;
-    height: 200px;
-    margin-top: 30px;
-}
-
-.introTextContainer{
-    position: relative;
-    margin-left: 50px;
-    max-width: auto;
-    word-break: break-all;
-    align-self: center;
-}
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 header li, header a, header button {
     font-family: 'Questrial', sans-serif;
@@ -156,4 +140,201 @@ header{
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: #004055;
+}
+
+.des_panel{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+h1 {
+    text-align: center !important;
+}
+
+.search_descrip{
+    font-size: 25px;
+    text-align: center;
+}
+
+.info{
+    font-size: 20px;
+}
+
+
+.contentContainer{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #0093E9;
+    background-image: linear-gradient(116deg, #0093E9 0%, #80D0C7 100%);
+    padding: 30px;
+    min-height: 100vh !important;
+}
+
+.activity{
+    border: 2px solid rgba(255, 255, 255,.7);
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+    margin-bottom: 50px;
+}
+
+ion-icon{
+    color: rgba(255, 255, 255,.7);
+    font-size: 60px;
+}
+
+ion-icon[name="remove-circle-outline"] {
+    color: red;
+    cursor: pointer;
+}
+
+.activity:hover{
+    transition: all .3s ease 0s;
+    transform: scale(1.05,1.05);
+}
+
+.contentContainer .contain{
+    min-width: 70vw;
+}
+
+.icon {
+    display: inline-block;
+    color: gray;
+    vertical-align: middle;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.middle{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-content .upper{
+    margin-bottom: 20px;
+}
+
+.middle img{
+    height: 200px;
+    padding-left: 10px;
+}
+
+.modalTitle{
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.modalDate{
+    font-size:large;
+}
+
+.modalInfo{
+    font-size: medium;
+    font-weight: bold;
+    color: var(--gray3);
+}
+
+.modalPrice{
+    font-size: medium;
+    color: var(--gray3);
+}
+
+.modalBottom{
+    padding-left: 10px;
+}
+
+.address{
+    font-weight: bold;
+    color: var(--light_primary);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1077px)
+{
+    
+    .address{
+        text-align: center;
+    }
+    
+    .description{
+        text-align: center;
+    }   
+}
+
+.activityContainer {
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right input {
+    display: block;
+    margin-top: 25px;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.right input[type="submit"] {
+    cursor: pointer;
+    margin-bottom: 15px;
 }

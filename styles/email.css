@@ -165,7 +165,76 @@ header{
     border-width: 0px 0px 2px 0px;
     border-color: #004055;
 }
+.box{
+    width: 600px;
+    padding: 50px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to top, #6699FF 0%, #4975e5 100%);
+    text-align: center;
+    box-shadow: 10px 10px 5px 0px rgba(81, 79, 79, 0.75);
+}
 
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 525;
+    font-size: 30px;
+}
+
+.box input[type = "text"], .box input[type = "text"]{
+    font-family: 'Questrial', sans-serif;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 10px;
+    width: 350px;
+    outline: none;
+    color: white;
+    border-radius: 36px;
+
+    transition: .25s;
+}
+
+.box input[type = "text"]:focus, .box input[type = "password"]:focus{
+    width: 320px;
+    border-color: RGB(0, 85, 149);
+}
+
+.box input[type = "submit"], .box input[type = "button"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #00994C;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.box input[type = "submit"]:hover{
+    border: 2px solid RGB(0, 85, 149);
+}
+
+input{
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+}
+
+/*
 .des_panel{
     margin-top: 50px;
     display: flex;
@@ -186,3 +255,4 @@ h1 {
 .info{
     font-size: 40px;
 }
+*/
