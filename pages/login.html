@@ -18,7 +18,7 @@
             <li><a href="/community">Community</a></li>
 			<li><a href="/search">Search</a></li>
 			<li><a href="/mail">Mailing List</a></li>
-			<li><a href="/admin">Storefront</a></li>
+			<li><a href="/login">Storefront</a></li>
           </ul>
         </nav>
       </header>
@@ -28,8 +28,9 @@
         <h1 style="font-family: 'Questrial', sans-serif;">Login</h1>
         <input type = "text" name = "" placeholder="Email">
         <input type = "password" name = "" placeholder="Password">
-        <input type = "submit" name = "" value="Login" style="font-family: 'Questrial', sans-serif;">  
-        <h4 style = "color: white; font-family: 'Questrial', sans-serif;" >Not a Member?  <a href = "signup">Sign up<a></h4>
+        <input type = "submit" name = "" value="Login" style="font-family: 'Questrial', sans-serif;" onclick="event.preventDefault(); window.location='/admin';");
+          ">  
+        <h4 style = "color: white; font-family: 'Questrial', sans-serif;" >Not a Member?  <a href = "/signup">Sign up<a></h4>
         </div>
     </form>
 </body>

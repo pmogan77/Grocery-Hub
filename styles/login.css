@@ -225,3 +225,143 @@ input{
 input::placeholder{
     color: white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+header li, header a, header button {
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 7%;
+    background: rgb(16, 25, 44);
+    /*background-image: linear-gradient(to bottom, rgb(69, 91, 135) 0%, #4975e5 100%);*/
+    z-index: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: all .3s ease 0s;
+    box-shadow: none;
+}
+
+.logo
+{
+    cursor: pointer;
+    height: 60px;
+    transition: all .3s ease 0s;
+    transform: scale(1.0,1.0);
+}
+
+.logo:hover{
+    /* border-radius: 20px;
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75); */
+    transition: all .3s ease 0s;
+    transform: scale(1.1,1.1);
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all .1s ease 0s;
+}
+
+.nav__links li a:hover {
+    transition: all .1s ease 0s;
+    padding-bottom: 5px;
+    color: rgba(143, 78, 4, 0.749);
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: #004055;
+}
+.des_panel{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #0093E9;
+    background-image: linear-gradient(to bottom, #64c6ec 0%, #bc90d0 100%);
+    padding: 30px;
+    min-height: 100vh !important;
+    /*justify-content: space-around;*/
+}
+.box{
+    width: 800px;
+    padding: 50px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to top, #6699FF 0%, #4975e5 100%);
+    text-align: center;
+    box-shadow: 10px 10px 5px 0px rgba(81, 79, 79, 0.75);
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.box input[type = "text"], .box input[type = "text"]{
+    font-family: 'Questrial', sans-serif;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 10px;
+    width: 450px;
+    outline: none;
+    color: white;
+    border-radius: 36px;
+
+    transition: .25s;
+}
+
+.box input[type = "text"]:focus, .box input[type = "password"]:focus{
+    width: 320px;
+    border-color: RGB(0, 85, 149);
+}
+
+.box input[type = "submit"], .box input[type = "button"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #00994C;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.box input[type = "submit"]:hover{
+    border: 2px solid RGB(0, 85, 149);
+}
+
+input{
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+}

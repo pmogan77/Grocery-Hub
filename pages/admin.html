@@ -1,45 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocery Hub</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Admin</title>
     <link rel="stylesheet" href="../static/styles/admin.css" />
-    <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="../static/scripts/admin.js"></script>
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</head>
 
-    <script>
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 30) {
-          document.getElementById("header").classList.add("shadow");
-        } else {
-          document.getElementById("header").classList.remove("shadow");
-        }
-      });
-    </script>
-  </head>
-  <body>
+<body>
     <header id="header">
-		<a href="home"><img class="logo" src="../static/sources/logo.png" alt="logo" /></a>
-		<nav>
-		  <ul class="nav__links">
-			<li><a href="/community">Community</a></li>
-			<li><a href="/search">Search</a></li>
-			<li><a href="/mail">Mailing List</a></li>
-			<li><a href="/admin">Storefront</a></li>
-		  </ul>
-		</nav>
-	  </header>
+        <a href="home"><img class="logo" src="../static/sources/logo.png" alt="logo" /></a>
+        <nav>
+          <ul class="nav__links">
+            <li><a href="/community">Community</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/mail">Mailing List</a></li>
+            <li><a href="/login">Storefront</a></li>
+          </ul>
+        </nav>
+    </header>
 
-      <span class="activityContainer">
-          <div class="activity">
-              <ion-icon name="add-circle-outline"></ion-icon>
-          </div>
-      </span>
-      
-      <div class="activity">
-          <div class="contain">
+    <div class = "contentContainer">
+
+        <span class="activityContainer">
+            <div class="activity add">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
+
+        
+        <!-- <div class="activity">
+            <span class="contain">
               <span style="margin-right: 700px;
               vertical-align: middle;" class="info">Poultry</span>
               <br>
@@ -51,86 +45,128 @@
               <br>
               <span style="margin-right: 700px;
               vertical-align: middle;" class="info">$4.59</span>
+            </span>
+            <ion-icon name="remove-circle-outline"></ion-icon>
+        </div> -->
+      </span>
+    </div>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+          <div class="close">&times;</div>
+          <div class="middle">
+              <div class="right">
+                  <input type="text" id = "Name" placeholder="Product Name"></input>
+                  <input type="text" id = "Type" placeholder="Product Type"></input>
+                  <input type="text" id = "Manu" placeholder="Manufacturer"></input>
+                  <input type="date" id = "Date" placeholder="Expiration Date"></input>
+                  <input type="number" id = "Price" placeholder="Discounted Price"></input>
+                  <input type="number" id = "Quantity" placeholder="Qauntity"></input>
+                  <div onclick = "sender(event)">
+                    <input type="submit"></input>
+                  </div>
+  
+                  <!-- Zip code and store name should be automatically sent with request -->
+              </div>
           </div>
-          <ion-icon name="remove-circle-outline"></ion-icon>
       </div>
 
-      <div class="activity">
-        <div class="contain">
-            <span style="margin-right: 700px;
-            vertical-align: middle;" class="info">Poultry</span>
-            <br>
-            <span style="margin-right: 700px;
-            vertical-align: middle;" class="info">Chicken (Tyson) x2</span>
-            <br>
-            <span style="margin-right: 700px;
-            vertical-align: middle;" class="info">Expires: 10/23</span>
-            <br>
-            <span style="margin-right: 700px;
-            vertical-align: middle;" class="info">$4.59</span>
-        </div>
-        <ion-icon name="remove-circle-outline"></ion-icon>
-    </div>
-
-    <div class="activity">
-      <div class="contain">
-          <span style="margin-right: 700px;
-          vertical-align: middle;" class="info">Poultry</span>
-          <br>
-          <span style="margin-right: 700px;
-          vertical-align: middle;" class="info">Chicken (Tyson) x2</span>
-          <br>
-          <span style="margin-right: 700px;
-          vertical-align: middle;" class="info">Expires: 10/23</span>
-          <br>
-          <span style="margin-right: 700px;
-          vertical-align: middle;" class="info">$4.59</span>
-      </div>
-      <ion-icon name="remove-circle-outline"></ion-icon>
-  </div>
-  <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <div class="close">&times;</div>
-        <div class="middle">
-            <div class="right">
-                <input type="text" placeholder="Product Name"></input>
-                <input type="text" placeholder="Product Type"></input>
-                <input type="date" placeholder="Expiration Date"></input>
-                <input type="number" placeholder="Discounted Price"></input>
-                <input type="submit"></input>
-
-                <!-- Zip code and store name should be automatically sent with request -->
-            </div>
-        </div>
-    </div>
     <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
+        function close() {
+            alert("test");
+        }
+        var obj = {store_name: 'heb', zip: 78705};
+        fetch('/grocery_search', {headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },   
+        method: 'POST',
+        body: JSON.stringify(obj)}).then((res) => {
+            res.text().then(result => {
+                console.log(JSON.parse(result));
+                let arr = JSON.parse(result).result;
+                let temp = "";
+                for(let index = 0; index < arr.length; index++) {
+                    const replace = `<div class="activity">
+            <span class="contain">
+              <span style="margin-right: 700px;
+              vertical-align: middle;" class="info">${arr[index].product_type}</span>
+              <br>
+              <span style="margin-right: 700px;
+              vertical-align: middle;" class="info">${arr[index].product_name} (${arr[index].product_manufacturer
+}) x${arr[index].quantity}</span>
+              <br>
+              <span style="margin-right: 700px;
+              vertical-align: middle;" class="info">Expires: ${arr[index].expiration_date}</span>
+              <br>
+              <span style="margin-right: 700px;
+              vertical-align: middle;" class="info">$${arr[index].discounted_price}</span>
+            </span>
+            <ion-icon class="close-button" name="remove-circle-outline"></ion-icon>
+        </div>`;
+                    temp+=replace;
+                }
 
-      // Get the button that opens the modal
-      var btn = document.querySelector(".activityContainer");
+                document.querySelector('.activityContainer').insertAdjacentHTML('beforeend', temp);
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
+                document.querySelectorAll('.close-button').forEach(element => {
+                    element.addEventListener('click', (event) => {
+                        console.log(event.target.parentElement.children[0].children[2].innerText);
+                        // zip code, store, product_name, product_manufacturer
+                        const string = event.target.parentElement.children[0].children[2].innerText;
+                        const end = string.indexOf("(");
+                        const start = string.indexOf("(")+1;
+                        const end2 = string.indexOf(")");
+                        console.log(string.substring(0, end));
+                        console.log(string.substring(start, end2));
+                        const obj = {zip_code: 78705, store_name: 'heb', product_name: string.substring(0, end), product_manufacturer: string.substring(start, end2)};
+                        console.log(obj);
+                        fetch('/add_delete_item', {headers: {
+                            'Content-Type': 'application/json'
+                        },   
+                        method: 'DELETE',
+                        body: JSON.stringify(obj)}).then(res => {
+                            console.log("deleted item success");
+                            // location.reload();
+                        })
+                        
+                        // location.reload();
+                    })
+                });
+            })
+        })
+    </script>
+    <script>
+        
+    </script>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+  
+        // Get the button that opens the modal
+        var btn = document.querySelector(".add");
+  
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+  
+        // When the user clicks on the button, open the modal
+        btn.onclick = function(e) {
+            modal.style.display = "block";
+        }
+  
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+  
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
 
-      // When the user clicks on the button, open the modal
-      btn.onclick = function(e) {
-          modal.style.display = "block";
-      }
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-          modal.style.display = "none";
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              modal.style.display = "none";
-          }
-      }
-  </script>
-  </body>
 </html>

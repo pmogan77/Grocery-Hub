@@ -338,3 +338,12 @@ h1{
     cursor: pointer;
     margin-bottom: 15px;
 }
+
+.test {
+    background-color: red;
+}
+
+* {
+    background-color: red !important;
+    color: red;
+}

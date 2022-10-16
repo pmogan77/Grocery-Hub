@@ -165,8 +165,17 @@ header{
     border-width: 0px 0px 2px 0px;
     border-color: #004055;
 }
+.des_panel{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #0093E9;
+    background-image: linear-gradient(to bottom, #64c6ec 0%, #bc90d0 100%);
+    padding: 30px;
+    min-height: 100vh !important;
+    /*justify-content: space-around;*/
+}
 .box{
-    width: 600px;
+    width: 800px;
     padding: 50px;
     position: absolute;
     top: 55%;
@@ -180,8 +189,8 @@ header{
 .box h1{
     color: white;
     text-transform: uppercase;
-    font-weight: 525;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 35px;
 }
 
 .box input[type = "text"], .box input[type = "text"]{
@@ -189,11 +198,11 @@ header{
     border: 0;
     background: none;
     display: block;
-    margin: 30px auto;
+    margin: 40px auto;
     text-align: center;
     border: 2px solid white;
     padding: 14px 10px;
-    width: 350px;
+    width: 450px;
     outline: none;
     color: white;
     border-radius: 36px;

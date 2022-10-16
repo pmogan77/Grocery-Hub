@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/styles/search.css"/>
     <link rel="shortcut icon" type="image/png" href="img/logo.png" />
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="../static/scripts/search.js"></script>
 
     <script>
       window.addEventListener("scroll", () => {
@@ -36,36 +37,16 @@
   <form class = "box">
     <div class = "sField">
     <h1 style="font-family: 'Questrial', sans-serif;">Grocery Search</h1>
-    <input type = "text" name = "" placeholder="Zipcode">
-    <input type = "text" name = "" placeholder="Store Name">
-    <input type = "text" name = "" placeholder="Types">
-    <input type = "submit" name = "" value="Submit" style="font-family: 'Questrial', sans-serif;">  
+    <input type = "text" id="zipcode" name = "" placeholder="Zipcode">
+    <input type = "text" id="store" name = "" placeholder="Store Name">
+    <input type = "text" id="food_type" name = "" placeholder="Types">  
+    <div onclick = "redirect(event)">
+        
+      <input type = "submit" name = "" value="Submit" style="font-family: 'Questrial', sans-serif;">
+      
     </div>
+  </div>
 </form>
 </body>
-    </html>
+</html>
 
-    < ! ╌ <div class = "des_panel">
-      <div class = "search_descrip">
-          <h1>
-            Get notified when produce is available
-          </h1>
-      </div>
-    </div>
-  <div class = "des_panel">
-      <form>
-        <div class = "info">
-          <label for="email">Enter your email:</label><br>
-          <input type="email" id="email" name="email"><br>
-          <label for="zip">Enter the zip code:</label><br>
-          <input id="zip" name="zip" type="text" pattern="[0-9]*"><br>
-          <label for="types">Enter the type of product you want</label><br>
-          <input type="text" id="types" name="types"><br>
-        </div>
-        <div onclick = "sending()">
-              
-          <input type="submit" value="Submit">
-          
-      </div>
-      </form>
-    </div> ╌>
