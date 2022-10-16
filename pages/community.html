@@ -4,15 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View All Products</title>
     <meta name="description" content="View all available products.">
-    <link rel = "shortcut icon" type="image/png" href="../sources/logo.png">
-    <link rel = "stylesheet" href = "../styles/community.css">
+    <link rel = "shortcut icon" type="image/png" href="../static/sources/logo.png">
+    <link rel = "stylesheet" href = "../static/styles/community.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
   </head>
 
   <body>
     <header id="header">
-      <a href="home"><img class="logo" src="img/logo.png" alt="logo" /></a>
+      <a href="home"><img class="logo" src="static/sources/logo.png" alt="logo" /></a>
       <nav>
         <ul class="nav__links">
             <li><a href="/community">Community</a></li>
@@ -31,11 +31,6 @@
 
         <div class = "none">No products found.</div>
 
-        <div class = "productSquare">
-          <div class = "containLength">
-            <p class = "productSum"> <span class = "name">{%NAME%}</span>
-          </div>
-        </div>
 
         <!--Loader 3-->
         <div class="loader3"></div>
@@ -43,8 +38,8 @@
         <!--store3Squares-->
 
         <div class = "productSquare">
-          <div class = "containLength">
-              <span class = "name">Gaston Walmart (77494)</span> 
+          <div class = "containLength" onload="getProducts()">
+            <span class = "name">Gaston Walmart (77494)</span> 
               <br> 
               <div>
                 <div class="allCategories">

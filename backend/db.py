@@ -16,6 +16,7 @@ def remove_all_tables():
     DROP TABLE IF EXISTS accountsdb ;
     DROP TABLE IF EXISTS accounts_db;
     DROP TABLE IF EXISTS products_db;
+    DROP TABLE IF EXISTS email_list_db;
     """
     # remove all tables first
     conn.execute(text(remove_all_query))
@@ -26,6 +27,7 @@ def get_products(zip):
     SELECT * FROM products_db WHERE zip_code = {zip}
     """
     return conn.execute(text(get_product_query)).fetchall()
+
 
 def remove_product(product_name, store_name, product_manufacturer):
     # ASSUMPTION: product_name, store_name, product_manuf. are all unique identifiers. could be source of bugs
@@ -94,32 +96,51 @@ def init_db():
     VALUES('a', 'a', 'a', DATE '2016-03-26', 2.5, 10, 'a', 78705)
     ;"""
     conn.execute(text(insert_product))
-    # create accounts db
+    # create accounts table
+    # accountType: 0 = user, 1 = company
     create_accounts_query = """
     CREATE TABLE IF NOT EXISTS accounts_db (
         acountType INT,
         email STRING,
         password STRING,
-        address STRING
+        name STRING,
+        zip INT
     );
     """
     conn.execute(text(create_accounts_query))
+    # inserts 1 company account
+    add_comp_acct_query = """
+    INSERT INTO accounts_db VALUES
+    (0, 'TheStoreCompany@rediffmail.com', '$Password1', 'Guadalupe Target', 78705);
+    """
+    conn.execute(text(add_comp_acct_query))
+
+    # creates email_list_db table - user accounts
+    email_list_db = """
+    CREATE TABLE IF NOT EXISTS email_list_db (
+        email STRING,
+        store_name STRING,
+        food_type STRING,
+        zipcode INT
+    );
+    """
+    conn.execute(text(email_list_db))
+    # inserts 1 user account into email list
+    add_user_acct_query = """
+    INSERT INTO email_list_db VALUES
+    ('beagledeagle123@rediffmail.com', 'Guadalupe Target', 'Dairy', 31345);
+    """
+    conn.execute(text(add_user_acct_query))
 
 # removes all tables and then adds them back
 def reinit_db():
     remove_all_tables()
     init_db()
 
-sqlQuery = """CREATE TABLE accounts (
-    id UUID PRIMARY KEY,
-    balance INT8
-);"""
-#res = conn.execute(text(sqlQuery))
-
 # initialize db
 reinit_db()
 
-#conn.execute(text(create_products_query))
-res = conn.execute(text("SELECT * FROM products_db;")).fetchall()
-#res = conn.execute(text("select * from products_db")).fetchall()
-print(res)
+# sqlQuery = """CREATE TABLE accounts (
+#     id UUID PRIMARY KEY,
+#     balance INT8
+# );"""
