@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocery Hub</title>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../static/styles/index.css" />
     <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <script src='../static/scripts/index.js'></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     <script>
@@ -20,7 +21,7 @@
   </head>
   <body>
     <header id="header">
-		<a href="home"><img class="logo" src="../sources/logo.png" alt="logo" /></a>
+		<a href="home"><img class="logo" src="../static/sources/logo.png" alt="logo" /></a>
 		<nav>
 		  <ul class="nav__links">
 			<li><a href="/community">Community</a></li>
@@ -40,11 +41,11 @@
           <p class="food">Food to people</p> <br>
           <p class = "learning">Tons of food get wasted daily due to expiration. <br> <br>
             We connect grocery stores to their customers <br><br> to reduce food waste and get you cheaper prices.</p>
-          <button class="main__btn"><a href="#">See What's Available</a></button>
+          <button class="main__btn" onclick = "getProducts()"><a href="#">See What's Available</a></button>
         </div>
 
         <div class="video_1_Container">
-			<img src="../sources/grocery.jpg" alt="Connectivity">
+			<img src="../static/sources/grocery.jpg" alt="Connectivity">
         </div>
       </div>
       
